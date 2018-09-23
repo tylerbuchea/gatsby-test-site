@@ -1,0 +1,12 @@
+export const onRouteUpdate = function({ location }) {
+  if (process.env.NODE_ENV === `production` && typeof gtag === `function`) {
+    const pathIsExcluded = location &&
+      typeof window.excludeGtagPaths !== `undefined` &&
+      window.excludeGtagPaths.some(rx => rx.test(location.pathname));
+
+    if (pathIsExcluded) return;
+
+    const pagePath = location ? location.pathname + location.search + location.hash : undefined
+    window.gtag(`event`, `page_view`, { page_path: pagePath });
+  }
+}
