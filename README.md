@@ -9,7 +9,7 @@ yarn
 ## Develop
 
 ```bash
-yarn start
+yarn develop
 ```
 
 ## Test
