@@ -106,3 +106,13 @@ mkdir src/plugins
   },
 },
 ```
+
+## Resources
+
+- [https://developers.google.com/analytics/devguides/collection/gtagjs/renaming-the-gtag-object](https://developers.google.com/analytics/devguides/collection/gtagjs/renaming-the-gtag-object)
+- [https://www.en.advertisercommunity.com/t5/Google-Ads-Tracking-and/Global-site-tag-Adwords-vs-Analytics/td-p/1244711#](https://www.en.advertisercommunity.com/t5/Google-Ads-Tracking-and/Global-site-tag-Adwords-vs-Analytics/td-p/1244711#)
+- [https://stackoverflow.com/questions/51486130/how-to-combine-google-analytics-and-google-adwords-gtag-js](https://stackoverflow.com/questions/51486130/how-to-combine-google-analytics-and-google-adwords-gtag-js)
+- [https://developers.google.com/gtagjs/devguide/snippet](https://developers.google.com/gtagjs/devguide/snippet)
+- [https://support.google.com/analytics/answer/7478520?hl=en](https://support.google.com/analytics/answer/7478520?hl=en)
+- [https://support.google.com/dcm/partner/answer/7568534](https://support.google.com/dcm/partner/answer/7568534)
+- []()
