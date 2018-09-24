@@ -24,7 +24,7 @@ module.exports = {
         // This object gets passed directly to the gtag config command
         // This config will be shared accross all trackingIds
         gtagConfig: {
-          optimize_id: 'YOUR_GOOGLE_OPTIMIZE_TRACKING_ID',
+          optimize_id: 'OPT_CONTAINER_ID',
           anonymize_ip: true,
         },
         // This object is used for configuration specific to this plugin
@@ -44,18 +44,18 @@ module.exports = {
 
 ## Custom Events
 
-This plugin automatically sends a "pageview" event to all products given to "trackingIds" on every Gatsbys route change.
+This plugin automatically sends a "pageview" event to all products given as "trackingIds" on every Gatsbys route change.
 
 If you want to call a custom event you have access to `window.gtag` where you can call an event for all products:
 
 ```bash
-window.gtag('event', 'click' { ...data });
+window.gtag('event', 'click', { ...data });
 ```
 
 or you can target a specific product:
 
 ```bash
-window.gtag('event', 'click' { send_to: 'AW-CONVERSION_ID', ...data });
+window.gtag('event', 'click', { send_to: 'AW-CONVERSION_ID', ...data });
 ```
 
 ## `<OutboundLink>` component

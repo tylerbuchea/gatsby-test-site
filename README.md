@@ -62,7 +62,7 @@ const options = {
   gtagConfig: {
     // Make sure the optimize id is registered correctly for all trackingIds
     // How?
-    optimize_id: 'YOUR_GOOGLE_OPTIMIZE_TRACKING_ID',
+    optimize_id: 'OPT_CONTAINER_ID',
     // Make sure this enables anonymous ips for all trackingIds
     // Make sure this generates the gtaOptout function and that the function that side effect produces is works for all trackingIds
     // How?
@@ -115,4 +115,5 @@ mkdir src/plugins
 - [https://developers.google.com/gtagjs/devguide/snippet](https://developers.google.com/gtagjs/devguide/snippet)
 - [https://support.google.com/analytics/answer/7478520?hl=en](https://support.google.com/analytics/answer/7478520?hl=en)
 - [https://support.google.com/dcm/partner/answer/7568534](https://support.google.com/dcm/partner/answer/7568534)
+- [https://support.google.com/optimize/answer/7513085](https://support.google.com/optimize/answer/7513085)
 - []()
