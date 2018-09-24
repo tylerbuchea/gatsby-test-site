@@ -116,4 +116,5 @@ mkdir src/plugins
 - [https://support.google.com/analytics/answer/7478520?hl=en](https://support.google.com/analytics/answer/7478520?hl=en)
 - [https://support.google.com/dcm/partner/answer/7568534](https://support.google.com/dcm/partner/answer/7568534)
 - [https://support.google.com/optimize/answer/7513085](https://support.google.com/optimize/answer/7513085)
+- [https://developers.google.com/analytics/devguides/collection/gtagjs/ip-anonymization](https://developers.google.com/analytics/devguides/collection/gtagjs/ip-anonymization)
 - []()
