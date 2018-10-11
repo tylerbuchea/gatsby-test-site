@@ -87,11 +87,15 @@ Google Site Tag. Otherwise you are not allowed to use it. The option adds the
 block of code below:
 
 ```javascript
-function gtagOptout() {
-  window['ga-disable-TRACKING_ID_1'] = true
-  window['ga-disable-TRACKING_ID_2'] = true
-  // etc
+function gaOptout() {
+  ;(document.cookie =
+    disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/'),
+    (window[disableStr] = !0)
 }
+
+var gaProperty = 'UA-XXXXXXXX-X',
+  disableStr = 'ga-disable-' + gaProperty
+document.cookie.indexOf(disableStr + '=true') > -1 && (window[disableStr] = !0)
 ```
 
 If your visitors should be able to set an Opt-Out-Cookie (No future tracking)

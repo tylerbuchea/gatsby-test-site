@@ -1,11 +1,15 @@
-import React from "react";
+import React from 'react'
 
-export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }, pluginOptions) => {
-  if (process.env.NODE_ENV !== `production`) return null;
+export const onRenderBody = (
+  { setHeadComponents, setPostBodyComponents },
+  pluginOptions
+) => {
+  // if (process.env.NODE_ENV !== `production`) return null
 
-  const firstTrackingId = (pluginOptions.trackingIds && pluginOptions.trackingIds.length)
-    ? pluginOptions.trackingIds[0]
-    : ``;
+  const firstTrackingId =
+    pluginOptions.trackingIds && pluginOptions.trackingIds.length
+      ? pluginOptions.trackingIds[0]
+      : ``
 
   const excludeGtagPaths = []
   if (typeof pluginOptions.pluginConfig.exclude !== `undefined`) {
@@ -21,8 +25,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }, plugi
     : setPostBodyComponents
 
   const renderHtml = () => {
-    return (
-    `
+    return `
       ${
         excludeGtagPaths.length
           ? `window.excludeGtagPaths=[${excludeGtagPaths.join(`,`)}];`
@@ -31,12 +34,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }, plugi
       ${
         typeof pluginOptions.gtagConfig.anonymize_ip !== `undefined` &&
         pluginOptions.gtagConfig.anonymize_ip === true
-          ? `function gtagOptout() {
-              ${pluginOptions.trackingIds.map(trackingId =>
-                `window['ga-disable-${trackingId}'] = true;`
-              ).join(``)}
-            }
-            `
+          ? `function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='${firstTrackingId}',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);`
           : ``
       }
       if(${
@@ -49,23 +47,27 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }, plugi
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        ${pluginOptions.trackingIds.map(trackingId =>
-          `gtag('config', '${trackingId}', ${JSON.stringify(pluginOptions.gtagConfig || {})});`
-        ).join(``)}
+        ${pluginOptions.trackingIds
+          .map(
+            trackingId =>
+              `gtag('config', '${trackingId}', ${JSON.stringify(
+                pluginOptions.gtagConfig || {}
+              )});`
+          )
+          .join(``)}
       }
       `
-    );
-  };
+  }
 
   return setComponents([
     <script
       key={`gatsby-plugin-google-gtag`}
-      async 
+      async
       src={`https://www.googletagmanager.com/gtag/js?id=${firstTrackingId}`}
-    ></script>,
+    />,
     <script
       key={`gatsby-plugin-google-gtag-config`}
       dangerouslySetInnerHTML={{ __html: renderHtml() }}
     />,
-  ]);
+  ])
 }

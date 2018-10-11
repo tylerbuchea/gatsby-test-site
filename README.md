@@ -117,4 +117,7 @@ mkdir src/plugins
 - [https://support.google.com/dcm/partner/answer/7568534](https://support.google.com/dcm/partner/answer/7568534)
 - [https://support.google.com/optimize/answer/7513085](https://support.google.com/optimize/answer/7513085)
 - [https://developers.google.com/analytics/devguides/collection/gtagjs/ip-anonymization](https://developers.google.com/analytics/devguides/collection/gtagjs/ip-anonymization)
+- [https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out](https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out)
+- [https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging](https://developers.google.com/analytics/devguides/collection/analyticsjs/debugging)
+- [https://support.google.com/dcm/partner/answer/7570440?hl=en](https://support.google.com/dcm/partner/answer/7570440?hl=en)
 - []()
